@@ -1,0 +1,60 @@
+.divs{
+  width: 830px;
+  height: 220px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+ 
+}
+body {
+  font-family: Verdana;
+  font-size: 80%;
+}
+#mainDiv{
+  height: 770px;
+  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 3px;
+  background-color: #DCDCDC;
+}
+#accDiv{
+  height: 20px;
+  width: 100px;
+  border: solid 3px;
+  margin-top: 10px;
+  margin-right: 35px;
+  float: right;
+}
+#blocksDiv{
+  width: 1440px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#filtersDiv{
+  height: 700px;
+  width: 250px;
+  border: solid 3px;
+  float: left;
+  margin-right: 10px;
+  background-color: #FFEBCD;
+}
+#itemsDiv{
+  overflow: auto;
+  height: 700px;
+  width: 900px;
+  border: solid 3px;
+  float: left;
+  margin-right: 10px;
+  background-color: #FFEBCD;
+}
+#bagDiv{
+  height: 700px;
+  width: 250px ;
+  border: solid 3px;
+  float: left;
+  background-color: #FFEBCD;
+}
