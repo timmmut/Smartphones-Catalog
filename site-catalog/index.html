@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   <div id='mainDiv'>
+    
+    <div style='width: 1500px; height: 40px'>
+      <select style='margin-left: 1075px;margin-top:20px' id="sortTypes"  onchange="sortElements()">
+        <option value="none">No sorting</option>
+        <option value="decrease">Descending</option>
+        <option value="increase">Ascending</option>
+      </select>
+      <div id='accDiv'></div>
+    </div>
+    
+    <div id='blocksDiv'>
+      <div id='filtersDiv'>
+        <p>Brands:</p>
+        <input type="checkbox" id="Apple" onchange="sortBrand(newItems)">Apple<br>
+        <input type="checkbox" id="Samsung" onchange="sortBrand(newItems)">Samsung<br>
+        <input type="checkbox" id="Realme" onchange="sortBrand(newItems)">Realme<br>
+        <input type="checkbox" id="Ulefone" onchange="sortBrand(newItems)">Ulefone<br>
+        <input type="checkbox" id="Vivo" onchange="sortBrand(newItems)">Vivo<br>
+        <input type="checkbox" id="Xiaomi" onchange="sortBrand(newItems)">Xiaomi<br><br>
+
+        <p>Filter by price:</p>
+        From:<input type='text' id='inpPriceFrom'/><br>
+        To:<input type='text' id='inpPriceTo'/><br>
+        <input type='button' value='Show products' onclick='sortPrice()'><br><br>
+
+      </div>
+      <div id='itemsDiv'></div>
+      <div id='bagDiv'></div>
+    </div>
+    
+  </div>
+  <script src="phones.js"></script>
+  <script src="script.js"></script>
+   
+</body>
+
+</html>
