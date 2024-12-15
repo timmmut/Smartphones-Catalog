@@ -1,0 +1,60 @@
+numOfItems = 60;
+function downloadTxt(text, filename){
+  blob = new Blob([text], {type: "text/plain"});
+  url = window.URL.createObjectURL(blob);
+  a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+}
+
+phones = [];
+names = document.getElementsByClassName('result__name');
+prices = document.getElementsByClassName('g-item-data');
+images = document.getElementsByClassName('result__img');
+
+options = document.getElementsByClassName('result__attr_var');
+resOptions = document.getElementsByClassName('result__attr_val');
+
+
+for (i=0;i<numOfItems;i++){
+  phones.push({
+    name: names[i].innerText,
+    imgLink: images[i].getElementsByTagName('img')[0].src
+  });
+
+  name = phones[i].name;
+  nameArr = name.split(' ');
+  phones[i].brand = nameArr[1];
+  
+  price = prices[i].innerText;
+  priceArr = price.split(',');
+  phones[i].price = priceArr[0];
+}
+
+key1=0;
+key2=0;
+key3=0;
+for (j=0;j<options.length;j++){
+  if(options[j].innerText=='Оперативная память'){
+    phones[key1].ram = resOptions[j].innerText;
+    key1++;
+  }
+  if(options[j].innerText=='Постоянная память'){
+    phones[key2].rom = resOptions[j].innerText;
+    key2++;
+  }
+  if(options[j].innerText=='Диагональ экрана'){
+    phones[key3].inch = resOptions[j].innerText;
+    key3++;
+  }
+  
+}
+
+for (i=0;i<numOfItems;i++){
+  console.log(phones[i]);
+}
+
+jsonPhones = JSON.stringify(phones);
+console.log(jsonPhones);
+downloadTxt(`${jsonPhones}`,'someFile.js');
